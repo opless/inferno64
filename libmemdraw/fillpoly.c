@@ -19,9 +19,9 @@ struct Seg
 };
 
 static	void	zsort(Seg **seg, Seg **ep);
-static	int	ycompare(void*, void*);
-static	int	xcompare(void*, void*);
-static	int	zcompare(void*, void*);
+static	int	ycompare(const void*, const void*);
+static	int	xcompare(const void*, const void*);
+static	int	zcompare(const void*, const void*);
 static	void	xscan(Memimage *dst, Seg **seg, Seg *segtab, int nseg, int wind, Memimage *src, Point sp, int, int, int, int);
 static	void	yscan(Memimage *dst, Seg **seg, Seg *segtab, int nseg, int wind, Memimage *src, Point sp, int, int);
 
@@ -468,7 +468,7 @@ zsort(Seg **seg, Seg **ep)
 }
 
 static int
-ycompare(void *a, void *b)
+ycompare(const void *a, const void *b)
 {
 	Seg **s0, **s1;
 	long y0, y1;
@@ -486,7 +486,7 @@ ycompare(void *a, void *b)
 }
 
 static int
-xcompare(void *a, void *b)
+xcompare(const void *a, const void *b)
 {
 	Seg **s0, **s1;
 	long x0, x1;
@@ -504,7 +504,7 @@ xcompare(void *a, void *b)
 }
 
 static int
-zcompare(void *a, void *b)
+zcompare(const void *a, const void *b)
 {
 	Seg **s0, **s1;
 	long z0, z1;

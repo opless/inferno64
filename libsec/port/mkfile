@@ -56,10 +56,10 @@ UPDATE=mkfile\
 	$HFILES\
 	$CFILES\
 
-%.c:D:  %.mp
-	echo '#include "os.h"' > $target
-	echo '#include <mp.h>' >> $target
-	mpc $prereq >> $target
+#%.c:D:  %.mp
+#	echo '#include "os.h"' > $target
+#	echo '#include <mp.h>' >> $target
+#	mpc $prereq >> $target
 
 # TODO fix the compile errors
 #$O.rsatest: rsatest.$O

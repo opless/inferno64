@@ -8,11 +8,11 @@ OS=		o
 AR=		ar
 ARFLAGS=	ruvs
 
-AS=		cc -c
+AS=		cc -arch x86_64 -c
 ASFLAGS=
 
-CC=		cc -c
-CFLAGS=	-g\
+CC=		cc -arch x86_64 -c
+CFLAGS=	-arch x86_64 -g\
 		-O\
 		-Wno-deprecated-declarations -Wuninitialized -Wunused -Wreturn-type -Wimplicit\
 		-I$ROOT/MacOSX/amd64/include\
@@ -22,7 +22,7 @@ CFLAGS=	-g\
 		-fms-extensions -Wno-microsoft-anon-tag
 
 ANSICPP=
-LD=		cc
+LD=		cc -arch x86_64
 LDFLAGS=	-L/usr/X11R6/lib
 
 SYSLIBS=

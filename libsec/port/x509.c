@@ -2448,7 +2448,7 @@ mkutc(long t)
 {
 	Elem e;
 	char utc[50];
-	Tm *tm = gmtime(t);
+	Tm *tm = lib9_gmtime(t);
 
 	e.tag.class = Universal;
 	e.tag.num = UTCTime;

@@ -466,7 +466,7 @@ tktopopt(Tk *tk, char *opt)
 
 /* general compare - compare top-left corners, y takes priority */
 static int
-tkfcmpgen(void *ap, void *bp)
+tkfcmpgen(const void *ap, const void *bp)
 {
 	TkWinfo *a = ap, *b = bp;
 
@@ -483,7 +483,7 @@ tkfcmpgen(void *ap, void *bp)
 
 /* compare x-coords only */
 static int
-tkfcmpx(void *ap, void *bp)
+tkfcmpx(const void *ap, const void *bp)
 {
 	TkWinfo *a = ap, *b = bp;
 	return a->r.min.x - b->r.min.x;
@@ -491,7 +491,7 @@ tkfcmpx(void *ap, void *bp)
 
 /* compare y-coords only */
 static int
-tkfcmpy(void *ap, void *bp)
+tkfcmpy(const void *ap,const void *bp)
 {
 	TkWinfo *a = ap, *b = bp;
 	return a->r.min.y - b->r.min.y;
@@ -516,7 +516,7 @@ tksortfocusorder(TkWinfo *inf, int n)
 {
 	int i;
 	Rectangle overlap, r;
-	int (*cmpfn)(void*, void*);
+	int (*cmpfn)(const void*,const void*);
 
 	overlap = inf[0].r;
 	for (i = 0; i < n; i++) {
