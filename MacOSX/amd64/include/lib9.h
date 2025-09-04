@@ -21,7 +21,7 @@
 #include <fcntl.h>
 #include <setjmp.h>
 #include <float.h>
-#include <time.h>
+//#include <time.h>
 #include <wctype.h>
 #define	getwd	infgetwd
 
@@ -513,3 +513,17 @@ extern  u32   getfsr(void);
 
 // HACK
 extern	double	NaN(void);
+extern	double	Inf(int);
+extern	void*   mallocz(usize, int);
+extern  Tm*     gmtime(long);
+
+typedef union FPdbleword FPdbleword;
+union FPdbleword
+{
+	double  x;
+	struct {        /* little endian */
+		uint lo;
+		uint hi;
+	};
+};
+

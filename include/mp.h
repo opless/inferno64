@@ -37,7 +37,7 @@ void	mpfree(mpint *b);
 void	mpbits(mpint *b, int n);	/* ensure that b has at least n bits */
 mpint*	mpnorm(mpint *b);		/* dump leading zeros */
 mpint*	mpcopy(mpint *b);
-void	mpassign(mpint *old, mpint *new);
+void	mpassign(mpint *old, mpint *_new);
 
 /* random bits */
 mpint*	mprand(int bits, void (*gen)(uchar*, int), mpint *b);

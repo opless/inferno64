@@ -18,7 +18,8 @@ CFLAGS=	-g\
 		-I$ROOT/MacOSX/amd64/include\
 		-I$ROOT/include\
  		-I/usr/X11R6/include\
-		-DOPENBSD_amd64 -fno-stack-protector
+		-DOPENBSD_amd64 -fno-stack-protector\
+		-fms-extensions -Wno-microsoft-anon-tag
 
 ANSICPP=
 LD=		cc
