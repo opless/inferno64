@@ -1,5 +1,5 @@
 /*
- * MacOSX amd64 fpu support
+* MacOSX amd64 fpu support
  * Mimic Plan 9 floating point support
  */
 
@@ -8,22 +8,19 @@
 void
 setfcr(u32 fcr)
 {
-/*
 	__asm__(
 		"xorb	$0x3f, %%al\n\t"
 		"movq	%%rax, (%%rsp)\n\t"
 		"fwait\n\t"
 		"fldcw	(%%rsp)\n\t"
-		:	/* no output * /
+		:	/* no output */
 		: "al" (fcr)
 	);
-*/
 }
 
 u32
 getfcr(void)
 {
-	/*
 	ulong fcr = 0;
 	__asm__(
 		"fwait\n\t"
@@ -35,14 +32,11 @@ getfcr(void)
 		: "rax" (fcr)
 	);
 	return fcr;
-	*/
-return 0;
 }
 
 u32
 getfsr(void)
 {
-/*
 	ulong fsr = -1;
 	__asm__(
 		"fwait\n\t"
@@ -53,13 +47,11 @@ getfsr(void)
 		: "rax" (&fsr)
 	);
 	return fsr;
-*/
-	return -1;
 }
 
 void
 setfsr(u32 fsr)
 {
-	//__asm__("fclex\n\t");
+	__asm__("fclex\n\t");
 }
 
