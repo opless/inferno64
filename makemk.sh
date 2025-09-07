@@ -10,7 +10,7 @@
 # ROOT should be the root of the Inferno tree
 ROOT=$HOME/src/purgatorio
 SYSTARG=MacOSX
-OBJTYPE=amd64
+OBJTYPE=arm64
 SYSTYPE=posix
 
 # if you have already changed mkconfig from the distribution, we'll use the definitions from that
