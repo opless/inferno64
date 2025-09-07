@@ -36,18 +36,3 @@ _FPrestore:
 
     ldp     x29, x30, [sp], #16
     ret
-
-// long __tas(long *p)
-// Atomically sets *p = 1 and returns the previous value.
-// Provides acquire on load and release on store, similar to xchg semantics.
-.globl __tas
-__tas:
-    // x0 = p
-    mov     x1, #1
-
-1:  ldaxr   x2, [x0]               // acquire load old value
-    stlxr   w3, x1, [x0]           // attempt store 1 with release semantics
-    cbnz    w3, 1b                 // retry on contention
-
-    mov     x0, x2                  // return old value
-    ret
