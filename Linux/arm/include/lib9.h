@@ -482,6 +482,7 @@ extern	ulong	getfcr(void);
 extern	ulong	getfsr(void);
 
 /* FCR */
+// TODO: FIXME this is wrong. These are amd64 fpu flags.
 #define	FPINEX	(1<<5)
 #define	FPUNFL	((1<<4)|(1<<1))
 #define	FPOVFL	(1<<3)
@@ -497,6 +498,7 @@ extern	ulong	getfsr(void);
 #define	FPPDBL	(2<<8)
 #define	FPPMASK	(3<<8)
 /* FSR */
+// TODO: FIXME this is wrong. These are also amd64 fpu flags.
 #define	FPAINEX	FPINEX
 #define	FPAOVFL	FPOVFL
 #define	FPAUNFL	FPUNFL
